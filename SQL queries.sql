@@ -20,7 +20,7 @@ ORDER BY Origin ASC, colYear ASC;
 -- quarta consulta (repetir amb nom ciutat)
 
 SELECT City, colYear, colMonth, AVG(ArrDelay) as 'prom_arribades' 
-FROM flights INNER JOIN usairports
+FROM flights LEFT JOIN usairports
 ON usairports.IATA=flights.Origin 
 GROUP BY City, colYear, colMonth
 ORDER BY City ASC, colYear ASC;
